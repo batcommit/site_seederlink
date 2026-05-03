@@ -1,0 +1,33 @@
+nav {
+    background-color: #2e7d32; /* Define a cor de fundo da barra de navegação (verde escuro) */
+    padding: 10px;            /* Adiciona espaçamento interno de 10px em todos os lados */
+    display: flex;               /* ativa o flexbox */
+    justify-content: space-between; /* logo à esquerda, menu à direita */
+    align-items: center; /* logo à esquerda, menu à direita */
+}
+
+nav .logo {
+    color: white; /* cor do texto do logo */
+    font-weight: bold; /* deixa em negrito */
+    font-size: 20px; /* aumenta o tamanho da fonte */
+}
+
+nav ul {
+    list-style: none;         /* Remove os marcadores padrão da lista (<ul>) */
+    margin: 0;                /* Remove a margem padrão do navegador */
+    padding: 0;               /* Remove o espaçamento interno padrão da lista */
+    display: flex;            /* Coloca os itens da lista lado a lado (layout flexível) */
+    gap: 40px;                /* Define o espaço de 40px entre cada item da lista */
+}
+
+nav ul li a {
+    color: white;             /* Define a cor do texto dos links como branco */
+    text-decoration: none;    /* Remove o sublinhado padrão dos links */
+    font-weight: bold;        /* Deixa o texto dos links em negrito */
+    transition: color 0.3s ease; /* Cria uma transição suave de 0.3 segundos na cor do texto */
+}
+
+nav ul li a:hover {
+    color: #a5d6a7;           /* Muda a cor do texto para verde claro quando o mouse passa por cima */
+    text-decoration: none;    /* Mantém o texto sem sublinhado mesmo no hover */
+}
