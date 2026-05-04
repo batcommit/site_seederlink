@@ -1,33 +1,76 @@
+/* ===========================
+   Reset básico
+   Remove margens e espaçamentos padrão
+   =========================== */
+html, body {
+    margin: 0;      /* remove margens padrão do navegador */
+    padding: 0;     /* remove espaçamento interno padrão */
+    width: 100%;    /* ocupa toda a largura da tela */
+    height: 100%;   /* ocupa toda a altura da tela */
+}
+
+
+/* ===========================
+   Header / Menu de navegação
+   =========================== */
 nav {
-    background-color: #2e7d32; /* Define a cor de fundo da barra de navegação (verde escuro) */
-    padding: 10px;            /* Adiciona espaçamento interno de 10px em todos os lados */
-    display: flex;               /* ativa o flexbox */
-    justify-content: space-between; /* logo à esquerda, menu à direita */
-    align-items: center; /* logo à esquerda, menu à direita */
+    background-color: #2e7d32;       /* cor de fundo verde escuro */
+    padding: 15px 30px;              /* espaçamento interno do menu */
+    display: flex;                   /* ativa flexbox para organizar logo e links */
+    justify-content: space-between;  /* logo à esquerda, links à direita */
+    align-items: center;             /* centraliza verticalmente os itens */
+    width: 100%;                     /* ocupa toda a largura da tela */
+    height: 50px;                    /* altura fixa do menu */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* sombra abaixo do menu */
+    position: fixed;                 /* fixa o menu no topo da página */
+    top: 0;
+    left: 0;
+    z-index: 1000;                   /* garante que fique acima do conteúdo */
 }
 
 nav .logo {
-    color: white; /* cor do texto do logo */
-    font-weight: bold; /* deixa em negrito */
-    font-size: 20px; /* aumenta o tamanho da fonte */
+    color: white;                    /* cor do texto da logo */
+    font-weight: bold;               /* deixa em negrito */
+    font-size: 22px;                 /* tamanho da fonte da logo */
+    flex: 1;                         /* ocupa espaço à esquerda */
 }
 
 nav ul {
-    list-style: none;         /* Remove os marcadores padrão da lista (<ul>) */
-    margin: 0;                /* Remove a margem padrão do navegador */
-    padding: 0;               /* Remove o espaçamento interno padrão da lista */
-    display: flex;            /* Coloca os itens da lista lado a lado (layout flexível) */
-    gap: 40px;                /* Define o espaço de 40px entre cada item da lista */
+    list-style: none;                /* remove marcadores da lista */
+    margin: 0;                       /* remove margens padrão */
+    padding: 0;                      /* remove espaçamento interno padrão */
+    display: flex;                   /* coloca os itens lado a lado */
+    gap: 40px;                       /* espaçamento entre os links */
+    flex: 2;                         /* ocupa mais espaço no meio */
+    font-size: 21px;                 /* aumenta o tamanho da fonte dos links */
 }
 
 nav ul li a {
-    color: white;             /* Define a cor do texto dos links como branco */
-    text-decoration: none;    /* Remove o sublinhado padrão dos links */
-    font-weight: bold;        /* Deixa o texto dos links em negrito */
-    transition: color 0.3s ease; /* Cria uma transição suave de 0.3 segundos na cor do texto */
+    color: white;                    /* cor dos links */
+    text-decoration: none;           /* remove sublinhado */
+    font-weight: bold;               /* deixa em negrito */
+    transition: color 0.3s ease;     /* transição suave ao mudar de cor */
 }
 
 nav ul li a:hover {
-    color: #a5d6a7;           /* Muda a cor do texto para verde claro quando o mouse passa por cima */
-    text-decoration: none;    /* Mantém o texto sem sublinhado mesmo no hover */
+    color: #a5d6a7;                  /* cor dos links no hover */
+}
+
+
+/* ===========================
+   Seção 1: Home
+   =========================== */
+#Home {
+    background-color: aquamarine;    /* cor de fundo da seção */
+    display: flex;                   /* ativa flexbox */
+    justify-content: center;         /* centraliza horizontalmente o conteúdo */
+    align-items: center;             /* centraliza verticalmente o conteúdo */
+    width: 100vw;                    /* ocupa toda a largura da viewport */
+    height: 70vh;                    /* ocupa 70% da altura da viewport */
+    margin: 0;                       /* remove margens */
+    padding: 0;                      /* remove espaçamento interno */
+}
+
+.Home-text {
+    text-align: center;              /* centraliza o texto dentro da div */
 }
