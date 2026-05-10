@@ -172,12 +172,16 @@ nav ul li a:hover {
 .fade-in {
     opacity: 0;                             /* invisível inicialmente */
     transform: translateY(20px);            /* deslocado para baixo */
-    animation: aparecer 1s ease forwards;   /* animação de surgimento */
 }
 
-.fade-in:nth-child(1) { animation-delay: 0.2s;}         /* atraso para o 1º elemento */
-.fade-in:nth-child(2) { animation-delay: 0.4s;}         /* atraso para o 2º elemento */
-.fade-in:nth-child(3) { animation-delay: 0.6s;}         /* atraso para o 3º elemento */
+.fade-in.visible {
+    animation: aparecer 1s ease forwards;
+}
+
+
+.fade-in.visible:nth-child(1) { animation-delay: 0.2s;}         /* atraso para o 1º elemento */
+.fade-in.visible:nth-child(2) { animation-delay: 0.4s;}         /* atraso para o 2º elemento */
+.fade-in.visible:nth-child(3) { animation-delay: 0.6s;}         /* atraso para o 3º elemento */
 
 @keyframes aparecer {
     to {
