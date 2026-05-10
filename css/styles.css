@@ -14,25 +14,25 @@ html, body {
    Header / Menu de navegação
    =========================== */
 nav {
-    background-color: #2e7d32;       /* cor de fundo verde escuro */
-    padding: 15px 30px;              /* espaçamento interno do menu */
-    display: flex;                   /* ativa flexbox para organizar logo e links */
-    justify-content: space-between;  /* logo à esquerda, links à direita */
-    align-items: center;             /* centraliza verticalmente os itens */
-    width: 100%;                     /* ocupa toda a largura da tela */
-    height: 50px;                    /* altura fixa do menu */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* sombra abaixo do menu */
-    position: fixed;                 /* fixa o menu no topo da página */
-    top: 0;
-    left: 0;
-    z-index: 1000;                   /* garante que fique acima do conteúdo */
+    background-color: #2e7d32;                    /* cor de fundo verde escuro */
+    padding: 15px 30px;                             /* espaçamento interno do menu */
+    display: flex;                                  /* ativa flexbox para organizar logo e links */
+    justify-content: space-between;                 /* logo à esquerda, links à direita */
+    align-items: center;                            /* centraliza verticalmente os itens */
+    width: 100%;                                    /* ocupa toda a largura da tela */
+    height: 50px;                                   /* altura fixa do menu */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);        /* sombra abaixo do menu */
+    position: fixed;                                /* fixa o menu no topo da página */
+    top: 0;                                         /* fixa no topo da viewport */
+    left: 0;                                        /* fixa à esquerda da viewport */
+    z-index: 1000;                                  /* garante que fique acima do conteúdo */
 }
 
 nav .logo {
-    color: white;                    /* cor do texto da logo */
-    font-weight: bold;               /* deixa em negrito */
-    font-size: 22px;                 /* tamanho da fonte da logo */
-    flex: 1;                         /* ocupa espaço à esquerda */
+    color: white;                                 /* cor do texto da logo */
+    font-weight: bold;                              /* deixa em negrito */
+    font-size: 22px;                                /* tamanho da fonte da logo */
+    flex: 1;                                        /* ocupa espaço à esquerda */
 }
 
 nav ul {
@@ -47,9 +47,9 @@ nav ul {
 
 nav ul li a {
     color: white;                    /* cor dos links */
-    text-decoration: none;           /* remove sublinhado */
-    font-weight: bold;               /* deixa em negrito */
-    transition: color 0.3s ease;     /* transição suave ao mudar de cor */
+    text-decoration: none;             /* remove sublinhado */
+    font-weight: bold;                 /* deixa em negrito */
+    transition: color 0.3s ease;       /* transição suave ao mudar de cor */
 }
 
 nav ul li a:hover {
@@ -63,15 +63,15 @@ nav ul li a:hover {
 #Home {
     background-image:
     linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url("../img/agro_header.jpg"); /* caminho da imagem de fundo */
+    url("../img/agro_header.jpg");  /* caminho da imagem de fundo */
     background-size: 100% 100%;     /* faz a imagem ocupar exatamente o espaço da section */
     background-position: center;    /* centraliza a imagem dentro da section */
     background-repeat: no-repeat;   /* evita repetição da imagem */
     display: flex;                  /* ativa flexbox para centralizar o conteúdo */
     justify-content: center;        /* centraliza horizontalmente o conteúdo */
     align-items: center;            /* centraliza verticalmente o conteúdo */
-    width: 100%;                   /* ocupa toda a largura da viewport */
-    height: 70vh;                   /* ocupa 70% da altura da viewport */
+    width: 100%;                    /* ocupa toda a largura da viewport */
+    height: 100vh;                  /* ocupa 100% da altura da viewport */
     margin: 0;                      /* remove margens externas */
     padding: 0;                     /* remove espaçamento interno */
     position: relative;             /* permite sobreposição do texto */
@@ -81,9 +81,9 @@ nav ul li a:hover {
    Texto sobreposto na seção Home
    =========================== */
 .Home-text {
-    font-size: 40px;
+    font-size: 40px;                /* tamanho da fonte do texto */
     text-align: center;             /* centraliza o texto dentro da div */
-    color: white;                   /* cor do texto para contraste */
+    color: white;                 /* cor do texto para contraste */
     padding: 20px 40px;             /* espaçamento interno do bloco de texto */
     border-radius: 10px;            /* bordas arredondadas para suavizar o visual */
 }
@@ -93,17 +93,20 @@ nav ul li a:hover {
    Seção 2: Sobre Nós
    =========================== */
 #SobreNos {
-   display: flex;                   /* coloca texto e imagem lado a lado */
-   justify-content: space-between;  /* distribui espaço entre os elementos */
-   align-items: center;             /* alinha verticalmente texto e imagem */
-   padding: 50px;                   /* espaçamento interno da seção */
-   background-color: #a5d6a7;     /* cor de fundo */
+   display: flex;                                                   /* coloca texto e imagem lado a lado */
+   justify-content: space-between;                                  /* distribui espaço entre os elementos */
+   align-items: center;                                             /* centraliza verticalmente texto e imagem no topo */
+   padding: 50px;                                                   /* espaçamento interno da seção */
+   background: linear-gradient(135deg, #ededad, #f0e5d8);       /* cor de fundo */
+   height: 100vh;                                                   /* ocupa 100% da altura da viewport */
+   box-sizing: border-box;                                          /* inclui padding no cálculo da altura/largura */
 }
 
 /*  Bloco de texto da seção */
 .sobre-nos-texto {
     flex: 1;                        /* ocupa metade da largura */
-    padding-right: 5px;            /* espaço entre texto e imagem */
+    text-align: left;               /* alinha texto à esquerda */
+    padding-left: 30px;             /* espaço entre texto e imagem */
 }
 
 .sobre-nos-texto h1 {
@@ -115,7 +118,72 @@ nav ul li a:hover {
 .sobre-nos-texto p {
     font-size: 30px;                /* tamanho do parágrafo */
     line-height: 1.6;               /* altura da linha para melhor leitura */
-    margin-bottom: 20px;            /* espaço abaixo do parágrafo */
+    margin-bottom: 50px;            /* espaço abaixo do parágrafo */
+}
+
+
+/* Ícones Missão, Visão, Valores */
+.icones {
+    display: flex;                          /* coloca os cards lado a lado */
+    justify-content: flex-start;            /* alinha os cards à esquerda */
+    gap: 30px;                              /* espaçamento entre os cards */
+    margin-top: 20px;                       /* espaço acima dos cards */
+}
+
+.icone {
+    background-color: #fff;                                 /* fundo branco do card */
+    padding: 20px;                                            /* espaçamento interno do card */
+    border-radius: 10px;                                      /* bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);                  /* sombra do card */
+    text-align: center;                                       /* centraliza conteúdo dentro do card */
+    flex: 1;                                                  /* cada card ocupa espaço proporcional */
+    display: flex;                                            /* ativa flexbox dentro do card */
+    flex-direction: column;                                   /* organiza ícone, título e texto em coluna */
+    justify-content: space-evenly;                            /* distribui conteúdo com espaçamento uniforme */
+    align-items: center;                                      /* centraliza horizontalmente */
+    min-height: 250px;                                        /* altura mínima do card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;    /* transição suave */
+}
+
+.icone:hover {
+    transform: translateY(-15px) scale(1.08);       /* levanta mais e aumenta levemente */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.7);       /* sombra mais forte */
+}
+
+
+.icone img {
+    width: 80px;                        /* tamanho do ícone */
+    margin-bottom: 15px;                /* espaço abaixo do ícone */
+    margin-top: 40px;                   /* espaço acima do ícone (desce o logo) */
+}
+
+.icone h3 {
+    font-size: 28px;                    /* tamanho do título */
+    margin-bottom: 12px;                /* espaço abaixo do título */
+    color: #2e7d32;                   /* cor do título */
+}
+
+.icone p {
+    font-size: 20px;                    /* tamanho do texto */
+    color: #333;                      /* cor do texto */
+}
+
+/* Animação de surgimento */
+.fade-in {
+    opacity: 0;                             /* invisível inicialmente */
+    transform: translateY(20px);            /* deslocado para baixo */
+    animation: aparecer 1s ease forwards;   /* animação de surgimento */
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.2s;}         /* atraso para o 1º elemento */
+.fade-in:nth-child(2) { animation-delay: 0.4s;}         /* atraso para o 2º elemento */
+.fade-in:nth-child(3) { animation-delay: 0.6s;}         /* atraso para o 3º elemento */
+
+@keyframes aparecer {
+    to {
+        opacity: 1;                     /* torna visível */
+        transform: translateY(0);       /* volta à posição original */
+    }
 }
 
 /* Bloco da imagem da seção */
@@ -125,10 +193,9 @@ nav ul li a:hover {
 }
 
 .sobre-nos-img img {
-    max-width: 80%;                                /* imagem responsiva (não ultrapassa o container) */
-    height: auto;
+    max-width: 80%;                                 /* imagem responsiva (não ultrapassa o container) */
+    height: auto;                                   /* mantém proporção da imagem */
     border-radius: 10px;                            /* bordas arredondadas para suavizar */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.6);        /* sombra para dar destaque */
 }
 
 
