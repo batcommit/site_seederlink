@@ -70,7 +70,7 @@ nav ul li a:hover {
     display: flex;                  /* ativa flexbox para centralizar o conteúdo */
     justify-content: center;        /* centraliza horizontalmente o conteúdo */
     align-items: center;            /* centraliza verticalmente o conteúdo */
-    width: 100vw;                   /* ocupa toda a largura da viewport */
+    width: 100%;                   /* ocupa toda a largura da viewport */
     height: 70vh;                   /* ocupa 70% da altura da viewport */
     margin: 0;                      /* remove margens externas */
     padding: 0;                     /* remove espaçamento interno */
@@ -87,5 +87,52 @@ nav ul li a:hover {
     padding: 20px 40px;             /* espaçamento interno do bloco de texto */
     border-radius: 10px;            /* bordas arredondadas para suavizar o visual */
 }
+
+
+/* ===========================
+   Seção 2: Sobre Nós
+   =========================== */
+#SobreNos {
+   display: flex;                   /* coloca texto e imagem lado a lado */
+   justify-content: space-between;  /* distribui espaço entre os elementos */
+   align-items: center;             /* alinha verticalmente texto e imagem */
+   padding: 50px;                   /* espaçamento interno da seção */
+   background-color: #a5d6a7;     /* cor de fundo */
+}
+
+/*  Bloco de texto da seção */
+.sobre-nos-texto {
+    flex: 1;                        /* ocupa metade da largura */
+    padding-right: 5px;            /* espaço entre texto e imagem */
+}
+
+.sobre-nos-texto h1 {
+    font-size: 60px;                /* tamanho do título */
+    margin-bottom: 20px;            /* espaço abaixo do título */
+    color: #2e7d32;               /* cor do título */
+}
+
+.sobre-nos-texto p {
+    font-size: 30px;                /* tamanho do parágrafo */
+    line-height: 1.6;               /* altura da linha para melhor leitura */
+    margin-bottom: 20px;            /* espaço abaixo do parágrafo */
+}
+
+/* Bloco da imagem da seção */
+.sobre-nos-img {
+    flex: 1;                        /* ocupa metade da largura da seção */
+    text-align: right;              /* alinha a imagem à direita */
+}
+
+.sobre-nos-img img {
+    max-width: 80%;                                /* imagem responsiva (não ultrapassa o container) */
+    height: auto;
+    border-radius: 10px;                            /* bordas arredondadas para suavizar */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);        /* sombra para dar destaque */
+}
+
+
+
+
 
 
