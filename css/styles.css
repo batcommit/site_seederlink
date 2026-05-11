@@ -179,9 +179,9 @@ nav ul li a:hover {
 }
 
 
-.fade-in.visible:nth-child(1) { animation-delay: 0.2s;}         /* atraso para o 1º elemento */
-.fade-in.visible:nth-child(2) { animation-delay: 0.4s;}         /* atraso para o 2º elemento */
-.fade-in.visible:nth-child(3) { animation-delay: 0.6s;}         /* atraso para o 3º elemento */
+.fade-in.visible:nth-child(1) { animation-delay: 0.4s;}         /* atraso para o 1º elemento */
+.fade-in.visible:nth-child(2) { animation-delay: 0.6s;}         /* atraso para o 2º elemento */
+.fade-in.visible:nth-child(3) { animation-delay: 0.8s;}         /* atraso para o 3º elemento */
 
 @keyframes aparecer {
     to {
@@ -201,6 +201,177 @@ nav ul li a:hover {
     height: auto;                                   /* mantém proporção da imagem */
     border-radius: 10px;                            /* bordas arredondadas para suavizar */
 }
+
+
+
+/* ===========================
+   Seção 3: Como Funciona
+   =========================== */
+
+#ComoFunciona {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    background: linear-gradient(to right, #f9f9f0, #f0e5d8);
+    text-align: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+
+#ComoFunciona h1 {
+    font-size: 50px;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+
+#ComoFunciona p {
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+
+.fluxo {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 100px;
+    position: relative;
+}
+
+
+.fluxo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    height: 3px;
+    background-color: #a5d6a7;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+
+.etapa {
+    flex: 1;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 350px;
+    box-sizing: border-box;
+    z-index: 1;
+    position: relative;
+}
+
+
+.numero-etapa {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    background-color: #2e7d32;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+
+
+.etapa:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+
+.etapa img {
+    width: 80px;
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+
+.etapa h2 {
+    font-size: 26px;
+    color: #2e7d32;
+    margin: 20px 0;
+}
+
+.etapa p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.etapa-animada {
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+
+.etapa-animada.visible {
+    animation: pularCard 0.8s ease forwards;
+}
+
+.etapa-animada.visible:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.etapa-animada.visible:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.etapa-animada.visible:nth-child(3) {
+    animation-delay: 1s;
+}
+
+/* Animação */
+@keyframes pularCard {
+
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1.03);
+    }
+
+    70% {
+        transform: translateY(10px) scale(0.99);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 
 
 

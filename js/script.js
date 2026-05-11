@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // Seleciona todos os elementos que possuem a classe .fade-in
-  const elementos = document.querySelectorAll(".fade-in");
+  const elementos = document.querySelectorAll(".fade-in, .etapa-animada");
 
   // Cria um observador para monitorar quando os elementos entram ou saem da viewport
   const observer = new IntersectionObserver((entries) => {
