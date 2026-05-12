@@ -259,11 +259,15 @@ nav ul li a:hover {
 
 .etapa {
     flex: 1;
+    position: relative;
+}
+
+
+.etapa-conteudo {
     background: #fff;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -273,6 +277,18 @@ nav ul li a:hover {
     box-sizing: border-box;
     z-index: 1;
     position: relative;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.etapa-conteudo:hover {
+    transform: translateY(-12px) scale(1.04);
+
+    box-shadow: 
+         0 12px 24px rgba(0,0,0,0.18),
+         0 6px 12px rgba(0,0,0,0.12);;
 }
 
 
@@ -299,11 +315,6 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-
-
-.etapa:hover {
-    transform: translateY(-10px) scale(1.05);
-}
 
 
 .etapa img {
