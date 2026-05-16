@@ -9,6 +9,37 @@ html, body {
     height: 100%;   /* ocupa toda a altura da tela */
 }
 
+/* ===========================
+   TIPOGRAFIA GLOBAL
+   =========================== */
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #222;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* ===========================
+   TÍTULOS E ELEMENTOS DE DESTAQUE
+   =========================== */
+h1,
+h2,
+h3,
+nav,
+.logo,
+.btn-home,
+.btn-contato,
+.numero-etapa,
+.dashboard-header span,
+.metrica h2,
+.dashboard-card h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+
 
 /* ===========================
    Header / Menu de navegação
@@ -20,7 +51,7 @@ nav {
     justify-content: space-between;                 /* logo à esquerda, links à direita */
     align-items: center;                            /* centraliza verticalmente os itens */
     width: 100%;                                    /* ocupa toda a largura da tela */
-    height: 50px;                                   /* altura fixa do menu */
+    height: 80px;                                   /* altura fixa do menu */
     box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);        /* sombra abaixo do menu */
     position: fixed;                                /* fixa o menu no topo da página */
@@ -36,6 +67,7 @@ nav .logo {
     font-weight: bold;                              /* deixa em negrito */
     font-size: 22px;                                /* tamanho da fonte da logo */
 }
+
 
 nav ul {
     list-style: none;                /* remove marcadores da lista */
@@ -1292,7 +1324,524 @@ nav ul li a:hover {
 }
 
 
+/* =========================================================
+   RESPONSIVIDADE COMPLETA — SEEDERLINK
+========================================================= */
 
+
+/* =========================================================
+   NOTEBOOKS E TABLETS
+========================================================= */
+
+@media screen and (max-width: 1024px) {
+
+    /* ===========================
+       MENU
+    =========================== */
+
+    nav {
+
+        padding: 15px 20px;
+
+        height: auto;
+
+        min-height: 80px;
+    }
+
+    nav ul {
+
+        gap: 20px;
+
+        font-size: 16px;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* ===========================
+       HOME
+    =========================== */
+
+    #Home {
+
+        height: auto;
+
+        padding-top: 140px;
+
+        padding-bottom: 100px;
+    }
+
+    .home-content {
+
+        flex-direction: column;
+
+        gap: 80px;
+
+        text-align: center;
+    }
+
+    .home-left h1 {
+
+        font-size: 56px;
+
+        max-width: 100%;
+    }
+
+    .home-left p {
+
+        font-size: 22px;
+
+        max-width: 100%;
+    }
+
+    .home-right {
+
+        width: 100%;
+    }
+
+    .home-item {
+
+        font-size: 20px;
+    }
+
+
+    /* ===========================
+       SOBRE NÓS
+    =========================== */
+
+    #SobreNos {
+
+        flex-direction: column;
+
+        height: auto;
+
+        padding: 100px 40px;
+
+        text-align: center;
+    }
+
+    .sobre-nos-texto {
+
+        padding-left: 0;
+    }
+
+    .sobre-nos-texto h1 {
+
+        font-size: 48px;
+    }
+
+    .sobre-nos-texto p {
+
+        font-size: 22px;
+    }
+
+    .sobre-nos-img {
+
+        text-align: center;
+
+        margin-top: 50px;
+    }
+
+    .sobre-nos-img img {
+
+        max-width: 320px;
+    }
+
+    .icones {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    /* ===========================
+       COMO FUNCIONA
+    =========================== */
+
+    #ComoFunciona {
+
+        height: auto;
+
+        padding: 100px 40px;
+    }
+
+    .fluxo {
+
+        flex-direction: column;
+
+        gap: 60px;
+    }
+
+    .fluxo::before {
+
+        display: none;
+    }
+
+
+    /* ===========================
+       PLATAFORMA
+    =========================== */
+
+    .plataforma-container {
+
+        flex-direction: column;
+
+        gap: 60px;
+    }
+
+    .dashboard-cards {
+
+        grid-template-columns: 1fr;
+    }
+
+    .plataforma-topo h1 {
+
+        font-size: 48px;
+    }
+
+    .plataforma-topo p {
+
+        font-size: 20px;
+    }
+
+
+    /* ===========================
+       CONTATO
+    =========================== */
+
+    .contato-container {
+
+        flex-direction: column;
+    }
+
+    .contato-form {
+
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+}
+
+
+
+/* =========================================================
+   CELULARES
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* ===========================
+       MENU
+    =========================== */
+
+    nav {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 15px;
+
+        padding: 20px;
+
+        height: auto;
+    }
+
+    nav .logo {
+
+        font-size: 20px;
+    }
+
+    nav ul {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+        font-size: 15px;
+    }
+
+
+    /* ===========================
+       HOME
+    =========================== */
+
+    #Home {
+
+        padding: 180px 25px 80px;
+
+        height: auto;
+    }
+
+    .home-content {
+
+        gap: 60px;
+    }
+
+    .home-left h1 {
+
+        font-size: 42px;
+
+        line-height: 1.2;
+    }
+
+    .home-left p {
+
+        font-size: 18px;
+    }
+
+    .btn-home {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+    .home-item {
+
+        font-size: 18px;
+
+        padding-left: 18px;
+    }
+
+
+    /* ===========================
+       SOBRE NÓS
+    =========================== */
+
+    #SobreNos {
+
+        padding: 80px 25px;
+    }
+
+    .sobre-nos-texto h1 {
+
+        font-size: 40px;
+    }
+
+    .sobre-nos-texto p {
+
+        font-size: 18px;
+    }
+
+    .icones {
+
+        flex-direction: column;
+    }
+
+    .icone {
+
+        width: 100%;
+
+        min-height: auto;
+    }
+
+    .icone h3 {
+
+        font-size: 24px;
+    }
+
+    .icone p {
+
+        font-size: 18px;
+    }
+
+
+    /* ===========================
+       COMO FUNCIONA
+    =========================== */
+
+    #ComoFunciona {
+
+        padding: 80px 25px;
+    }
+
+    #ComoFunciona h1 {
+
+        font-size: 38px;
+    }
+
+    #ComoFunciona p {
+
+        font-size: 18px;
+    }
+
+    .etapa-conteudo {
+
+        min-height: auto;
+    }
+
+    .etapa h2 {
+
+        font-size: 24px;
+    }
+
+    .etapa p {
+
+        font-size: 16px;
+    }
+
+
+    /* ===========================
+       PLATAFORMA
+    =========================== */
+
+    #Plataforma {
+
+        padding: 80px 25px;
+    }
+
+    .plataforma-topo h1 {
+
+        font-size: 38px;
+    }
+
+    .plataforma-topo p {
+
+        font-size: 18px;
+    }
+
+    .dashboard {
+
+        padding: 25px;
+    }
+
+    .dashboard-header {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+    .dashboard-header h3 {
+
+        font-size: 22px;
+    }
+
+    .dashboard-chart {
+
+        height: 160px;
+
+        gap: 12px;
+    }
+
+    .feature-card h3 {
+
+        font-size: 24px;
+    }
+
+    .feature-card p {
+
+        font-size: 16px;
+    }
+
+    .plataforma-metricas {
+
+        flex-direction: column;
+    }
+
+    .metrica h2 {
+
+        font-size: 32px;
+    }
+
+
+    /* ===========================
+       CONTATO
+    =========================== */
+
+    #Contato {
+
+        padding: 80px 25px;
+    }
+
+    .contato-topo h1 {
+
+        font-size: 40px;
+    }
+
+    .contato-topo p {
+
+        font-size: 18px;
+    }
+
+    .contato-form {
+
+        padding: 25px;
+    }
+
+    .info-item {
+
+        padding: 25px;
+    }
+
+    .btn-contato {
+
+        width: 100%;
+    }
+}
+
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    nav ul {
+
+        font-size: 13px;
+
+        gap: 10px;
+    }
+
+    .home-left h1 {
+
+        font-size: 34px;
+    }
+
+    .home-left p {
+
+        font-size: 16px;
+    }
+
+    .sobre-nos-texto h1,
+    #ComoFunciona h1,
+    .plataforma-topo h1,
+    .contato-topo h1 {
+
+        font-size: 32px;
+    }
+
+    .dashboard-card h2 {
+
+        font-size: 24px;
+    }
+
+    .metrica h2 {
+
+        font-size: 28px;
+    }
+
+    .metrica span {
+
+        font-size: 16px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+
+        font-size: 15px;
+    }
+}
 
 
 
