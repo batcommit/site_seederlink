@@ -1,22 +1,52 @@
-// Aguarda o carregamento completo do DOM antes de executar o código
+// =========================================================
+// ANIMAÇÕES AO SCROLL
+// =========================================================
+
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Seleciona todos os elementos que possuem a classe .fade-in
-  const elementos = document.querySelectorAll(".fade-in, .etapa-animada, .bar");
+    const elementos = document.querySelectorAll(
+        ".fade-in, .slide-left, .slide-right, .zoom-in, .bar"
+    );
 
-  // Cria um observador para monitorar quando os elementos entram ou saem da viewport
-  const observer = new IntersectionObserver((entries) => {
-    // Percorre cada elemento observado
-    entries.forEach(entry => {
-      // Se o elemento estiver visível na tela (intersectando a viewport)
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");   // adiciona a classe .visible → ativa a animação
-      } else {
-        entry.target.classList.remove("visible"); // remove a classe .visible → volta ao estado inicial
-      }
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("visible");
+
+            } else {
+
+                entry.target.classList.remove("visible");
+            }
+
+        });
+
+    }, {
+        threshold: 0.15
     });
-  }, { threshold: 0.2 }); // threshold define que a animação dispara quando 20% do elemento aparece
 
-  // Aplica o observador a cada elemento com a classe .fade-in
-  elementos.forEach(el => observer.observe(el));
+    elementos.forEach(el => observer.observe(el));
+
+});
+
+
+// =========================================================
+// NAVBAR BACKGROUND AO SCROLL
+// =========================================================
+
+window.addEventListener("scroll", () => {
+
+    const nav = document.querySelector("nav");
+
+    if(window.scrollY > 50){
+
+        nav.classList.add("nav-scroll");
+
+    } else {
+
+        nav.classList.remove("nav-scroll");
+    }
+
 });
