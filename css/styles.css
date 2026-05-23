@@ -30,6 +30,9 @@ button{
 NAVBAR
 ========================================================= */
 
+
+/* NAV CONTAINER */
+
 nav{
 
     position:fixed;
@@ -60,6 +63,9 @@ nav{
     transition:0.3s ease;
 }
 
+
+/* LOGO */
+
 .logo{
 
     color:white;
@@ -68,6 +74,9 @@ nav{
 
     font-weight:700;
 }
+
+
+/* NAV LINKS */
 
 nav ul{
 
@@ -115,12 +124,13 @@ nav ul li a:hover{
 }
 
 nav ul li a:hover::after{
+
     width:100%;
 }
 
 
 /* =========================================================
-SECTIONS
+GLOBAL SECTIONS
 ========================================================= */
 
 section{
@@ -130,48 +140,7 @@ section{
 
 
 /* =========================================================
-HOME
-========================================================= */
-
-#Home{
-
-    min-height:100vh;
-
-    display:flex;
-
-    align-items:center;
-
-    background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("../img/agro_header.jpg");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.home-content{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:90px;
-}
-
-.home-left{
-
-    flex:1;
-
-    color:white;
-}
-
-
-/* =========================================================
-SECTION TAGS
+GLOBAL SECTION TAGS
 ========================================================= */
 
 .tag-home,
@@ -200,6 +169,110 @@ SECTION TAGS
 }
 
 
+/* =========================================================
+SECTION TOP
+========================================================= */
+
+
+/* SECTION HEADER */
+
+.section-top{
+
+    text-align:center;
+
+    margin-bottom:80px;
+}
+
+
+/* SECTION TITLE */
+
+.section-top h2{
+
+    font-size:58px;
+
+    margin-bottom:20px;
+
+    color:#1F2933;
+}
+
+
+/* SECTION DESCRIPTION */
+
+.section-top p{
+
+    font-size:20px;
+
+    max-width:850px;
+
+    margin:0 auto;
+
+    line-height:1.8;
+
+    color:#334155;
+}
+
+
+/* PLATFORM TEXT */
+
+#Plataforma .section-top h2,
+#Plataforma .section-top p{
+
+    color:#ffffff;
+}
+
+
+/* =========================================================
+HOME
+========================================================= */
+
+
+/* HOME SECTION */
+
+#Home{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("../img/agro_header.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+
+/* HOME CONTENT */
+
+.home-content{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:90px;
+}
+
+
+/* HOME LEFT */
+
+.home-left{
+
+    flex:1;
+
+    color:white;
+}
+
+
+/* HOME TITLE */
+
 .home-left h1{
 
     font-size:76px;
@@ -208,6 +281,9 @@ SECTION TAGS
 
     margin-bottom:30px;
 }
+
+
+/* HOME DESCRIPTION */
 
 .home-left p{
 
@@ -222,6 +298,9 @@ SECTION TAGS
     margin-bottom:45px;
 }
 
+
+/* HOME BUTTONS */
+
 .home-buttons{
 
     display:flex;
@@ -230,6 +309,9 @@ SECTION TAGS
 
     flex-wrap:wrap;
 }
+
+
+/* HOME BUTTON */
 
 .btn-home,
 .btn-outline{
@@ -244,6 +326,9 @@ SECTION TAGS
 
     transition:0.3s ease;
 }
+
+
+/* PRIMARY BUTTON */
 
 .btn-home{
 
@@ -261,6 +346,9 @@ SECTION TAGS
 
     transform:translateY(-3px);
 }
+
+
+/* OUTLINE BUTTON */
 
 .btn-outline{
 
@@ -280,6 +368,9 @@ SECTION TAGS
     color:#1F5A24;
 }
 
+
+/* HOME RIGHT */
+
 .home-right{
 
     flex:0.9;
@@ -298,6 +389,9 @@ SECTION TAGS
     0 20px 50px rgba(0,0,0,0.22);
 }
 
+
+/* HOME CARD */
+
 .home-card{
 
     display:flex;
@@ -310,6 +404,7 @@ SECTION TAGS
 }
 
 .home-card:last-child{
+
     border-bottom:none;
 }
 
@@ -332,58 +427,113 @@ SECTION TAGS
     color:rgba(255,255,255,0.75);
 }
 
-
 /* =========================================================
-SECTION TOP
+PITCH VIDEO
 ========================================================= */
 
-.section-top{
+.pitch-link{
 
-    text-align:center;
+    margin-top:35px;
 
-    margin-bottom:80px;
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    width:fit-content;
+
+    padding:16px 22px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(10px);
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.15);
 }
 
-.section-top h2{
+.pitch-link:hover{
 
-    font-size:58px;
+    transform:translateY(-4px);
 
-    margin-bottom:20px;
+    background:rgba(255,255,255,0.12);
 
-    color:#1F2933;
+    border:1px solid rgba(255,255,255,0.18);
 }
 
-.section-top p{
+
+/* PLAY ICON */
+
+.play-icon{
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    background:#2E7D32;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
     font-size:20px;
 
-    max-width:850px;
-
-    margin:0 auto;
-
-    line-height:1.8;
-
-    color:#334155;
+    box-shadow:
+    0 10px 20px rgba(46,125,50,0.28);
 }
 
 
-/* TEXTO BRANCO NA PLATAFORMA */
+/* TEXTOS */
 
-#Plataforma .section-top h2,
-#Plataforma .section-top p{
+.pitch-link strong{
 
-    color:#ffffff;
+    display:block;
+
+    color:white;
+
+    font-size:16px;
+
+    margin-bottom:4px;
+}
+
+.pitch-link p{
+
+    color:rgba(255,255,255,0.72);
+
+    font-size:14px;
+
+    margin:0;
 }
 
 
 /* =========================================================
-SOBRE
+SOBRE NÓS
 ========================================================= */
+
+
+/* SOBRE SECTION */
 
 #SobreNos{
 
     background:#C7D8BE;
 }
+
+
+/* SOBRE CONTAINER */
 
 .sobre-container{
 
@@ -393,6 +543,9 @@ SOBRE
 
     gap:70px;
 }
+
+
+/* SOBRE TEXT */
 
 .sobre-texto{
 
@@ -423,6 +576,9 @@ SOBRE
     color:#334155;
 }
 
+
+/* SOBRE CARDS */
+
 .sobre-cards{
 
     display:grid;
@@ -431,6 +587,9 @@ SOBRE
 
     gap:30px;
 }
+
+
+/* SOBRE CARD */
 
 .sobre-card{
 
@@ -478,13 +637,19 @@ SOBRE
 
 
 /* =========================================================
-TIMELINE
+COMO FUNCIONA
 ========================================================= */
+
+
+/* TIMELINE SECTION */
 
 #ComoFunciona{
 
     background:#DDE8D7;
 }
+
+
+/* TIMELINE GRID */
 
 .timeline{
 
@@ -494,6 +659,9 @@ TIMELINE
 
     gap:30px;
 }
+
+
+/* TIMELINE CARD */
 
 .timeline-card{
 
@@ -519,6 +687,9 @@ TIMELINE
 
     transform:translateY(-10px);
 }
+
+
+/* TIMELINE NUMBER */
 
 .numero{
 
@@ -576,6 +747,9 @@ TIMELINE
 PLATAFORMA
 ========================================================= */
 
+
+/* PLATFORM SECTION */
+
 #Plataforma{
 
     background:
@@ -583,6 +757,9 @@ PLATAFORMA
 
     color:white;
 }
+
+
+/* PLATFORM GRID */
 
 .plataforma-grid{
 
@@ -592,6 +769,9 @@ PLATAFORMA
 
     gap:50px;
 }
+
+
+/* DASHBOARD */
 
 .dashboard{
 
@@ -606,6 +786,9 @@ PLATAFORMA
     box-shadow:
     0 20px 50px rgba(0,0,0,0.24);
 }
+
+
+/* DASHBOARD HEADER */
 
 .dashboard-header{
 
@@ -624,6 +807,9 @@ PLATAFORMA
 
     border-radius:40px;
 }
+
+
+/* DASHBOARD CARDS */
 
 .dashboard-cards{
 
@@ -652,6 +838,9 @@ PLATAFORMA
     margin-bottom:10px;
 }
 
+
+/* FEATURES */
+
 .features{
 
     display:flex;
@@ -674,6 +863,9 @@ PLATAFORMA
 /* =========================================================
 DASHBOARD CHART
 ========================================================= */
+
+
+/* CHART CONTAINER */
 
 .dashboard-chart{
 
@@ -703,7 +895,7 @@ DASHBOARD CHART
 }
 
 
-/* GRID DE FUNDO */
+/* CHART GRID */
 
 .dashboard-chart::before{
 
@@ -723,7 +915,7 @@ DASHBOARD CHART
 }
 
 
-/* BARRAS */
+/* CHART BARS */
 
 .chart-bars{
 
@@ -769,7 +961,7 @@ DASHBOARD CHART
 }
 
 
-/* ALTURAS */
+/* CHART HEIGHTS */
 
 .bar1{ height:45%; }
 .bar2{ height:70%; }
@@ -780,7 +972,7 @@ DASHBOARD CHART
 .bar7{ height:68%; }
 
 
-/* ANIMAÇÃO */
+/* CHART ANIMATION */
 
 .bar.visible{
 
@@ -794,10 +986,16 @@ DASHBOARD CHART
 CONTATO
 ========================================================= */
 
+
+/* CONTACT SECTION */
+
 #Contato{
 
     background:#AFC2A5;
 }
+
+
+/* CONTACT GRID */
 
 .contato-grid{
 
@@ -808,6 +1006,9 @@ CONTATO
     gap:50px;
 }
 
+
+/* CONTACT INFO */
+
 .contato-info{
 
     display:flex;
@@ -816,6 +1017,9 @@ CONTATO
 
     gap:25px;
 }
+
+
+/* INFO CARD */
 
 .info-card{
 
@@ -838,6 +1042,9 @@ CONTATO
     transform:translateY(-6px);
 }
 
+
+/* CONTACT FORM */
+
 .contato-form{
 
     background:#F4F8F1;
@@ -857,6 +1064,9 @@ CONTATO
     box-shadow:
     0 12px 32px rgba(28,48,31,0.08);
 }
+
+
+/* FORM INPUTS */
 
 .contato-form input,
 .contato-form textarea{
@@ -882,6 +1092,9 @@ CONTATO
     box-shadow:
     0 0 0 4px rgba(46,125,50,0.12);
 }
+
+
+/* FORM BUTTON */
 
 .contato-form button{
 
@@ -912,6 +1125,9 @@ CONTATO
 FOOTER
 ========================================================= */
 
+
+/* FOOTER CONTAINER */
+
 footer{
 
     background:#0D180E;
@@ -923,6 +1139,9 @@ footer{
     padding:50px 20px;
 }
 
+
+/* FOOTER TITLE */
+
 footer h3{
 
     margin-bottom:15px;
@@ -930,8 +1149,11 @@ footer h3{
 
 
 /* =========================================================
-RESPONSIVO
+RESPONSIVIDADE
 ========================================================= */
+
+
+/* TABLETS */
 
 @media(max-width:1024px){
 
@@ -958,6 +1180,8 @@ RESPONSIVO
     }
 }
 
+
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -1014,6 +1238,9 @@ RESPONSIVO
 ANIMAÇÕES
 ========================================================= */
 
+
+/* BASE ANIMATIONS */
+
 .fade-in,
 .slide-left,
 .slide-right,
@@ -1035,7 +1262,7 @@ ANIMAÇÕES
 }
 
 
-/* LEFT */
+/* SLIDE LEFT */
 
 .slide-left{
 
@@ -1043,7 +1270,7 @@ ANIMAÇÕES
 }
 
 
-/* RIGHT */
+/* SLIDE RIGHT */
 
 .slide-right{
 
@@ -1059,7 +1286,7 @@ ANIMAÇÕES
 }
 
 
-/* VISÍVEL */
+/* ACTIVE STATE */
 
 .visible{
 
@@ -1070,7 +1297,7 @@ ANIMAÇÕES
 
 
 /* =========================================================
-NAV SCROLL
+NAVBAR SCROLL
 ========================================================= */
 
 .nav-scroll{
