@@ -1094,6 +1094,19 @@ CONTATO
 }
 
 
+.erro-msg {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.sucesso-msg {
+  color: green;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+
 /* FORM BUTTON */
 
 .contato-form button{
@@ -1119,6 +1132,25 @@ CONTATO
 
     transform:translateY(-2px);
 }
+
+
+/* Estado desabilitado do botão */
+.contato-form button:disabled {
+  background: #9aa89a;   /* tom apagado */
+  color: #e0e0e0;        /* texto mais claro */
+  cursor: not-allowed;   /* cursor de bloqueio */
+  opacity: 0.6;          /* efeito de "apagado" */
+  box-shadow: none;      /* remove sombra */
+}
+
+.mensagem-sucesso {
+  display: none;          /* escondida por padrão */
+  color: #1F5A24;         /* mesma cor do botão */
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
 
 
 /* =========================================================
