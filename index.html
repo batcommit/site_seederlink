@@ -399,144 +399,55 @@ PLATAFORMA
 <section id="Plataforma">
 
     <div class="section-top white fade-in">
-
-        <span class="section-tag dark">
-
-            Plataforma Inteligente
-
-        </span>
-
-        <h2>
-
-            Tecnologia aplicada ao impacto social
-
-        </h2>
-
+        <span class="section-tag dark">Plataforma Inteligente</span>
+        <h2>Tecnologia aplicada ao impacto social</h2>
         <p>
-
             Inteligência artificial, rastreabilidade e inclusão digital
             impulsionando o agronegócio sustentável.
-
         </p>
-
     </div>
 
-
     <div class="plataforma-grid">
+        <!-- LOCALIZADOR DE PARCEIROS -->
+        <div class="feature-card localizador" id="localizador">
+            <h3>Localizador de Parceiros</h3>
+            <p>Selecione o perfil do parceiro:</p>
 
-        <div class="dashboard slide-left">
-
-            <div class="dashboard-header">
-
-                <h3>SeederLink Dashboard</h3>
-
-                <span>Status Online</span>
-
+            <div class="perfil-cards">
+                <div class="perfil-card" onclick="selecionarPerfil('produtor')">
+                    🌱 <strong>Produtor Rural</strong>
+                </div>
+                <div class="perfil-card" onclick="selecionarPerfil('investidor')">
+                    💰 <strong>Investidor</strong>
+                </div>
             </div>
 
-
-            <div class="dashboard-cards">
-
-                <div class="dashboard-card zoom-in">
-
-                    <h2>+240</h2>
-
-                    <p>Produtores conectados</p>
-
+            <!-- Campo de estado escondido inicialmente -->
+            <div id="estado-container" style="display:none; margin-top:20px;">
+                <p>Agora selecione o estado desejado:</p>
+                <div class="estado-busca">
+                    <select id="estado">
+                        <option value="">Selecione o estado desejado</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="MG">Minas Gerais</option>
+                    </select>
+                    <button onclick="buscarParceiros()">Buscar</button>
                 </div>
-
-
-                <div class="dashboard-card zoom-in">
-
-                    <h2>R$ 2.1M</h2>
-
-                    <p>Capital movimentado</p>
-
-                </div>
-
-
-                <div class="dashboard-card zoom-in">
-
-                    <h2>18T</h2>
-
-                    <p>Alimentos reaproveitados</p>
-
-                </div>
-
             </div>
 
-            <!-- GRÁFICO -->
-             
-            <div class="dashboard-chart">
-
-                <div class="chart-bars">
-
-                    <div class="bar bar1"></div>
-
-                    <div class="bar bar2"></div>
-
-                    <div class="bar bar3"></div>
-
-                    <div class="bar bar4"></div>
-
-                    <div class="bar bar5"></div>
-
-                    <div class="bar bar6"></div>
-
-                    <div class="bar bar7"></div>
-
-                </div>
-
-            </div>
-
+            <div id="resultado"></div>
         </div>
 
-
-        <div class="features">
-
-            <div class="feature-card slide-right">
-
-                <h3>Match Inteligente</h3>
-
-                <p>
-
-                    IA conecta investidores aos produtores ideais.
-
-                </p>
-
-            </div>
-
-
-            <div class="feature-card slide-right">
-
-                <h3>Logística Inteligente</h3>
-
-                <p>
-
-                    Redução de desperdício alimentar.
-
-                </p>
-
-            </div>
-
-
-            <div class="feature-card slide-right">
-
-                <h3>Inclusão Digital</h3>
-
-                <p>
-
-                    Integração via SMS para áreas rurais.
-
-                </p>
-
-            </div>
-
+        <!-- CARDS DE INFORMAÇÕES (invisíveis inicialmente) -->
+        <div class="features" id="cards-info">
+            <div class="feature-card" id="card1"></div>
+            <div class="feature-card" id="card2"></div>
+            <div class="feature-card" id="card3"></div>
         </div>
-
     </div>
 
 </section>
+
 
 
 <!-- =========================================================

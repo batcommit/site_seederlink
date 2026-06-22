@@ -53,6 +53,160 @@ window.addEventListener("scroll", () => {
 
 
 // =========================================================
+//  Lógica de Busca de Parceiros - Plataforma Inteligente
+// =========================================================
+
+var perfilSelecionado = "";
+
+function selecionarPerfil(tipo) {
+  perfilSelecionado = tipo;
+
+    // Remove destaque de todos os cards
+  var cards = document.querySelectorAll(".perfil-card");
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].classList.remove("ativo");
+  }
+
+  // Adiciona destaque ao card clicado
+  var cardSelecionado = document.querySelector(
+    ".perfil-card[onclick=\"selecionarPerfil('" + tipo + "')\"]"
+  );
+  cardSelecionado.classList.add("ativo");
+
+  document.getElementById("estado-container").style.display = "block";
+}
+
+function buscarParceiros() {
+  var estado = document.getElementById("estado").value;
+  var resultado = document.getElementById("resultado");
+
+  var parceiros = [
+    "Fazenda Boa Terra - SP - produtor",
+    "AgroFuturo Investimentos - SP - investidor",
+    "Sítio Esperança - MG - produtor",
+    "Capital Verde - MG - investidor"
+  ];
+
+  resultado.innerHTML = ""; // limpa antes de exibir
+
+  if (estado === "") {
+    resultado.innerHTML = "<p>Por favor, selecione um estado.</p>";
+    return;
+  }
+
+  var encontrados = false;
+  for (var i = 0; i < parceiros.length; i++) {
+    if (parceiros[i].includes(estado) && parceiros[i].includes(perfilSelecionado)) {
+      var nome = parceiros[i].split(" - ")[0];
+      resultado.innerHTML += `<p class="parceiro-opcao" onclick="selecionarParceiro(this, '${nome}')">${nome}</p>`;
+      encontrados = true;
+    }
+  }
+
+  if (!encontrados) {
+    resultado.innerHTML = "<p>Nenhum parceiro encontrado.</p>";
+  }
+}
+
+
+function selecionarParceiro(elemento, nome) {
+  var opcoes = document.querySelectorAll(".parceiro-opcao");
+  for (var i = 0; i < opcoes.length; i++) {
+    opcoes[i].classList.remove("ativo");
+  }
+
+  elemento.classList.add("ativo");
+  mostrarInfo(nome);
+
+  // Adiciona botão "Seguir com processo"
+  var seguirBtn = document.createElement("button");
+  seguirBtn.textContent = "Seguir com o processo";
+  seguirBtn.style.marginTop = "15px";
+  seguirBtn.style.padding = "12px 24px";
+  seguirBtn.style.borderRadius = "10px";
+  seguirBtn.style.background = "#2E7D32";
+  seguirBtn.style.color = "white";
+  seguirBtn.style.fontWeight = "600";
+  seguirBtn.style.border = "none";
+  seguirBtn.style.cursor = "pointer";
+  seguirBtn.style.transition = "0.3s ease";
+
+  // Remove botão anterior se já existir
+  var existente = document.querySelector("#seguir-processo-btn");
+  if (existente) {
+    existente.remove();
+  }
+  seguirBtn.id = "seguir-processo-btn";
+
+  elemento.insertAdjacentElement("afterend", seguirBtn);
+
+  // Ação ao clicar no botão
+  seguirBtn.addEventListener("click", () => {
+    alert("Para seguir com o processo, precisamos que você informe seus dados na seção de Contato.");
+    document.querySelector("#Contato").scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+
+
+// =========================================================
+//  Informações de Parceiros - Plataforma Inteligente
+// =========================================================
+
+var dadosParceiros = {
+  "Fazenda Boa Terra": {
+    tempo: "12 anos no mercado",
+    foco: "Cultivo de hortaliças orgânicas",
+    objetivo: "Busca investidores para ampliar exportação"
+  },
+  "AgroFuturo Investimentos": {
+    tempo: "8 anos de atuação",
+    foco: "Investimentos em logística agro",
+    objetivo: "Procura produtores para parceria em transporte"
+  },
+  "Sítio Esperança": {
+    tempo: "15 anos no mercado",
+    foco: "Produção de café orgânico",
+    objetivo: "Busca apoio para expandir exportação"
+  },
+  "Capital Verde": {
+    tempo: "10 anos de atuação",
+    foco: "Investimentos em sustentabilidade",
+    objetivo: "Procura produtores para projetos de energia limpa"
+  }
+};
+
+function mostrarInfo(nome) {
+  var dados = dadosParceiros[nome];
+  if (dados) {
+    // Atualiza conteúdo dos cards
+    document.getElementById("card1").innerHTML =
+      `<h3>Tempo de Mercado</h3><p>${dados.tempo}</p>`;
+    document.getElementById("card2").innerHTML =
+      `<h3>Foco Principal</h3><p>${dados.foco}</p>`;
+    document.getElementById("card3").innerHTML =
+      `<h3>Objetivo Atual</h3><p>${dados.objetivo}</p>`;
+
+    // Move o localizador para a esquerda
+    document.getElementById("localizador").classList.add("move-left");
+
+    // Exibe os cards informativos
+    var features = document.getElementById("cards-info");
+    features.classList.add("show");
+
+    // Dispara animação nos cards
+    var cards = document.querySelectorAll(".features .feature-card");
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].classList.remove("visible"); // reseta
+      void cards[i].offsetWidth;            // força reflow
+      cards[i].classList.add("visible");    // aplica animação
+    }
+  }
+}
+
+
+
+// =========================================================
 //  Lógica de Validação do Formulário
 // =========================================================
 
