@@ -752,10 +752,12 @@ PLATAFORMA
 
 #Plataforma{
 
-    background:
-    linear-gradient(to right,#102412,#18351d);
-
+    background:linear-gradient(to right,#102412,#18351d);
     color:white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -763,91 +765,39 @@ PLATAFORMA
 
 .plataforma-grid{
 
-    display:grid;
+    display: flex;
 
-    grid-template-columns:1.2fr 1fr;
+    justify-content: center;
 
     gap:50px;
 }
 
-
-/* DASHBOARD */
-
-.dashboard{
-
-    background:rgba(255,255,255,0.08);
-
-    padding:40px;
-
-    border-radius:28px;
-
-    backdrop-filter:blur(16px);
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,0.24);
+/* Localizador centralizado inicialmente */
+.localizador {
+    max-width: 900px;   /* aumenta a largura máxima */
+    width: 100%;        /* ocupa toda a largura disponível */
+    margin: 0 auto;
+    transition: all 0.6s ease;
 }
 
 
-/* DASHBOARD HEADER */
-
-.dashboard-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-bottom:40px;
-}
-
-.dashboard-header span{
-
-    background:#2E7D32;
-
-    padding:10px 18px;
-
-    border-radius:40px;
+/* Quando ativo, vai para a esquerda */
+.localizador.move-left {
+    margin: 0;
+    flex: 1;
 }
 
 
-/* DASHBOARD CARDS */
-
-.dashboard-cards{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:20px;
+/* Cards informativos invisíveis inicialmente */
+.features {
+    display: none; /* escondidos até clique */
+    flex: 1;
+    flex-direction: column;
+    gap: 25px;
 }
 
-.dashboard-card{
-
-    background:rgba(255,255,255,0.06);
-
-    padding:30px;
-
-    border-radius:20px;
-
-    text-align:center;
-}
-
-.dashboard-card h2{
-
-    color:#8CC48F;
-
-    margin-bottom:10px;
-}
-
-
-/* FEATURES */
-
-.features{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:25px;
+.features.show {
+    display: flex; /* aparece ao receber classe */
 }
 
 .feature-card{
@@ -859,126 +809,144 @@ PLATAFORMA
     border-radius:24px;
 }
 
+.features .feature-card {
+  background: rgba(255,255,255,0.08);
+  padding: 35px;
+  border-radius: 24px;
+  opacity: 0;                  /* invisível inicialmente */
+  transform: translateY(10px); /* leve deslocamento */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  display: none;               /* escondidos até clique */
+}
+
+.features .feature-card.visible {
+  display: block;              /* aparece ao receber classe */
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* =========================================================
-DASHBOARD CHART
+LOCALIZADOR DE PARCEIROS
 ========================================================= */
 
+#Plataforma .feature-card select,
+#Plataforma .feature-card input[type="radio"],
+#Plataforma .feature-card button {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
 
-/* CHART CONTAINER */
+/* Container flex para select + botão */
+.estado-busca {
+    display: flex;
+    gap: 20px;              /* espaçamento entre barra e botão */
+    align-items: center;
+}
 
-.dashboard-chart{
+/* Dropdown */
+.estado-busca select {
+    flex-grow: 1;           /* cresce para ocupar todo espaço disponível */
+    flex-shrink: 1;         /* permite reduzir em telas menores */
+    min-width: 250px;       /* largura mínima */
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #CBD5C0;
+    background: #ffffff;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
 
-    margin-top:50px;
+.estado-busca select:focus {
+    border: 1px solid #2E7D32;
+    box-shadow: 0 0 0 4px rgba(46,125,50,0.12);
+}
 
-    width:100%;
+/* Botão */
+.estado-busca button {
+    flex-shrink: 0;         /* impede que o botão diminua */
+    padding: 12px 24px;
+    border-radius: 10px;
+    background: #2E7D32;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
 
-    height:260px;
+.estado-busca button:hover {
+    background: #256628;
+    transform: translateY(-2px);
+}
 
-    background:rgba(255,255,255,0.04);
+/* Resultados */
+#resultado p {
+    background: rgba(255,255,255,0.08);
+    padding: 12px 18px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #ffffff;
+    font-weight: 500;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
 
-    border:1px solid rgba(255,255,255,0.05);
+.perfil-cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
 
-    border-radius:24px;
+.perfil-card {
+    flex: 1;
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
 
-    padding:30px;
+.perfil-card:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-4px);
+}
 
-    display:flex;
+.perfil-card.ativo {
+    border: 2px solid #20970b;   /* verde neon */
+    box-shadow: 0 0 12px #20970b;
+    transform: scale(1.05);
+}
 
-    align-items:flex-end;
+.parceiro-opcao {
+  background: rgba(255,255,255,0.08);
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin-top: 10px;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
 
-    justify-content:center;
+.parceiro-opcao:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
 
-    overflow:hidden;
-
-    position:relative;
+.parceiro-opcao.ativo {
+  border: 2px solid #20970b;   /* verde neon */
+  box-shadow: 0 0 12px #20970b;
+  transform: scale(1.03);
 }
 
 
-/* CHART GRID */
-
-.dashboard-chart::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-
-    background-size:40px 40px;
-
-    opacity:0.35;
-}
-
-
-/* CHART BARS */
-
-.chart-bars{
-
-    position:relative;
-
-    z-index:2;
-
-    width:100%;
-
-    height:100%;
-
-    display:flex;
-
-    align-items:flex-end;
-
-    justify-content:space-between;
-
-    gap:18px;
-}
-
-.bar{
-
-    flex:1;
-
-    border-radius:18px 18px 0 0;
-
-    background:
-    linear-gradient(to top,
-    #2E7D32,
-    #8CC48F);
-
-    opacity:0;
-
-    transform:translateY(40px);
-
-    transition:
-    height 1.2s ease,
-    opacity 1s ease,
-    transform 1s ease;
-
-    box-shadow:
-    0 12px 24px rgba(46,125,50,0.22);
-}
-
-
-/* CHART HEIGHTS */
-
-.bar1{ height:45%; }
-.bar2{ height:70%; }
-.bar3{ height:55%; }
-.bar4{ height:90%; }
-.bar5{ height:62%; }
-.bar6{ height:82%; }
-.bar7{ height:68%; }
-
-
-/* CHART ANIMATION */
-
-.bar.visible{
-
-    opacity:1;
-
-    transform:translateY(0);
+#seguir-processo-btn:hover {
+  background: #256628;
+  transform: translateY(-2px);
 }
 
 
